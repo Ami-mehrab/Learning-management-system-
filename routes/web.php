@@ -25,3 +25,6 @@ Route:: get('/categorydelete/ {cat_delete}',[CategoryController::class,'delete']
 //course route list
 
 Route::get ('/courselist',[CourseController::class,'mycourse'] ) ->name('course') ;
+Route::get ('/coursecreate',[CourseController::class,'create'] ) ->name('courselist') ;
+Route::post ('/coursestore',[CourseController::class,'store'] ) ->name('course.store') ;
+Route::get('/coursedelete/{id}',[CourseController::class,'delete'] ) ->name('coursedelete') ;
