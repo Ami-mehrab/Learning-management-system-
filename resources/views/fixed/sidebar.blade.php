@@ -71,6 +71,14 @@
                             <i class="uil-calender"></i>
                             <span> Instructor </span>
                         </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="{{Route('student')}}" class="side-nav-link">
+                            <i class="uil-calender"></i>
+                            <span> Student </span>
+                        </a>
+                    </li>
+
 
 
                     

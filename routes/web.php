@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -35,3 +36,9 @@ Route::get('instructorlist',[InstructorController::class,'myinstructor'])->name(
 Route::get('/instructor.create',[InstructorController::class,'create'])->name('i_list');
 Route::post('/instructor.store',[InstructorController::class,'store'])->name('i_store');
 Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->name('i_delete');
+//Student routelist
+
+Route::get('/studentlist',[StudentController::class,'list'])->name('student');
+Route::get('/studentcreate',[StudentController::class,'create'])->name('s_list');
+Route::post('/studentstore',[StudentController::class,'store'])->name('s_store');
+Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_delete');
