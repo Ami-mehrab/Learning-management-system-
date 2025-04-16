@@ -55,7 +55,7 @@
                     </li>
 
                       <li class="side-nav-item">
-                        <a href="{{url('/categorylist')}}" class="side-nav-link">
+                        <a href="{{Route('category.list')}}" class="side-nav-link">
                             <i class="uil-calender"></i>
                             <span> Category </span>
                         </a>

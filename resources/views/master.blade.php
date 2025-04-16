@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
+    @notifyCss
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="https://coderthemes.com/hyper/saas/assets/images/favicon.ico">
@@ -35,7 +36,7 @@
     <!-- Begin page -->
     <div class="wrapper">
 
-        
+    @include('notify::components.notify')
         <!-- ========== Topbar Start ========== -->
         @include('fixed.navbar')
         <!-- ========== Topbar End ========== -->
@@ -744,7 +745,7 @@
             </div>
         </div>
     </div>
-
+    @notifyJs
     <!-- Vendor js -->
     <script src="https://coderthemes.com/hyper/saas/assets/js/vendor.min.js"></script>
 

@@ -65,7 +65,7 @@ class StudentController extends Controller
         //
     }
 
-    /**
+    /**php 
      * Update the specified resource in storage.
      */
     public function update(Request $request, Student $student)

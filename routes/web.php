@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
@@ -15,11 +16,25 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 
-Route::get ('/',[DashboardController::class,'home'] );
+Route::group(['prefix'=>'admin'],function(){
 
+    //login page
+Route::get('/login',[AuthenticationController::class,'viewlogin'])->name('login');
+Route::post('/loggedin',[AuthenticationController::class,'afterlogin'])->name('after.login');
+
+
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('/logout',[AuthenticationController::class,'logout'])->name('log.out');
+   
+    //dashboard
+
+    Route::get ('/',[DashboardController::class,'home'] )->name('dashboard');
+
+    
 //category  routelist 
 
-Route::get ('/categorylist',[CategoryController::class,'list'] );  
+Route::get ('/categorylist',[CategoryController::class,'list'] )->name('category.list');
 Route::get ('/categorycreate',[CategoryController::class,'form'] );   
 Route::post ('/categorystore',[CategoryController::class,'store'] ); 
 Route:: get('/categorydelete/ {cat_delete}',[CategoryController::class,'delete']) ->name ('cat.delete');
@@ -36,9 +51,22 @@ Route::get('instructorlist',[InstructorController::class,'myinstructor'])->name(
 Route::get('/instructor.create',[InstructorController::class,'create'])->name('i_list');
 Route::post('/instructor.store',[InstructorController::class,'store'])->name('i_store');
 Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->name('i_delete');
+
 //Student routelist
 
 Route::get('/studentlist',[StudentController::class,'list'])->name('student');
 Route::get('/studentcreate',[StudentController::class,'create'])->name('s_list');
 Route::post('/studentstore',[StudentController::class,'store'])->name('s_store');
 Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_delete');
+
+
+});
+
+});
+
+
+
+
+
+
+

@@ -378,10 +378,10 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
+                    <!-- <a href="javascript:void(0);" class="dropdown-item">
                         <i class="mdi mdi-lifebuoy me-1"></i>
                         <span>Support</span>
-                    </a>
+                    </a> -->
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item">
@@ -390,7 +390,7 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
+                    <a href="{{Route('log.out')}}" class="dropdown-item">
                         <i class="mdi mdi-logout me-1"></i>
                         <span>Logout</span>
                     </a>
