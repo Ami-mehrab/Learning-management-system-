@@ -14,7 +14,9 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Course Name</th>
+                                    <th>Course</th>
+                                    <th>Category</th>
+                                    <th>Cat_name</th>
                                     <th>Outline</th>
                                     <th>Instructor</th>
                                     <th>Duration</th>
@@ -28,6 +30,8 @@
                                     <tr>
                                         <td>{{$courses ->id}} </td>
                                         <td> {{$courses ->name}}</td>
+                                        <td> {{$courses ->category_id}}</td>
+                                        <td> {{$courses ->category-> Name}}</td>
                                         <td>{{$courses ->outline}}</td>
                                         <td>{{$courses ->instructor}}</td>
                                         <td>{{$courses ->duration}}</td>
@@ -41,6 +45,7 @@
                                     @endforeach
                             </tbody>
                         </table>
+                        {{$course->links()}}
                     </div>
 
                 </div> <!-- End col -->

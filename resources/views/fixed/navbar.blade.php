@@ -355,8 +355,8 @@
                         <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                     </span>
                     <span class="d-lg-flex flex-column gap-1 d-none">
-                        <h5 class="my-0">Dominic Keller</h5>
-                        <h6 class="my-0 fw-normal">Founder</h6>
+                        <h5 class="my-0">Mahrab hossen</h5>
+                        <h6 class="my-0 fw-normal"></h6>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">

@@ -9,10 +9,10 @@
                   <div class = "row mb-5" >
                     <div class="col-10"> 
                       <h1>Category create </h1>
-                      <a class="btn btn-primary" href="{{url('/categorylist')}}">Back to Category list</a>
+                      <a class="btn btn-primary" href="{{Route('category.list')}}">Back to Category list</a>
                     </div>   
                   </div>
-                  <form action="{{url('/categorystore')}}" method ="post">
+                  <form action="{{Route('cat.store')}}" method ="post">
 
                   @csrf 
 

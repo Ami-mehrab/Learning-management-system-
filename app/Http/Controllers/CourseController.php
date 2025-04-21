@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -10,13 +11,16 @@ class CourseController extends Controller
     public function mycourse (){
 
         $course =Course::all();
+        $course=Course::with('category')->paginate(1);
 
-
-        return view ('crud.courselist',compact('course') ) ;
+        return view ('crud.courselist',compact('course'));
     }  
 
     public function create (){
-        return view ('crud.coursecreate');
+        $category=Category::all();
+        
+        return view ('crud.coursecreate',compact('category'));
+
     }
 
     public function store (Request $request)
@@ -24,7 +28,8 @@ class CourseController extends Controller
         // dd($request->all());
 
         Course:: create([
-            "name"=>$request ->course_name,
+            "name"=>$request ->course,
+            "category_id"=>$request ->category_id,
             "outline"=>$request ->course_outline,
             "instructor"=>$request ->course_instructor,
             "duration"=>$request ->course_duration,

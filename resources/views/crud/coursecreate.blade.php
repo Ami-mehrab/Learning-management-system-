@@ -12,12 +12,21 @@
                         <div class="card-body">
                             <form action="{{Route('course.store')}}" method="POST">
                                @csrf
-
+                               
+                        
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">Course Name</label>
-                                    <input type="text" name="course_name" id="" class="" value="" required>
-                                  
-                                </div>
+                                    <label for="name" class="form-label">Course</label>
+                                    <input type="text" name="course" id="" class="" value="" required>
+                             </div>
+                             <div class="mb-3">
+                                    <label for="category" class="form-label">Course Category</label>
+                                    <select name="category_id" class="form-select" aria-label="default">
+                                        <option value="">Select Category</option>
+                                        @foreach($category as $categories)
+                                        <option value="{{$categories->id}}">{{$categories->Name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
 
                                 <div class="mb-3">
                                     <label for="outline" class="form-label">Outline</label>

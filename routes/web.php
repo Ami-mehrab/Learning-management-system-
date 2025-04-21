@@ -32,11 +32,11 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get ('/',[DashboardController::class,'home'] )->name('dashboard');
 
     
-//category  routelist 
+//category  routelist
 
 Route::get ('/categorylist',[CategoryController::class,'list'] )->name('category.list');
-Route::get ('/categorycreate',[CategoryController::class,'form'] );   
-Route::post ('/categorystore',[CategoryController::class,'store'] ); 
+Route::get ('/categorycreate',[CategoryController::class,'form'] )->name('cat.create');   
+Route::post ('/categorystore',[CategoryController::class,'store'] )->name('cat.store'); 
 Route:: get('/categorydelete/ {cat_delete}',[CategoryController::class,'delete']) ->name ('cat.delete');
 
 //course routelist

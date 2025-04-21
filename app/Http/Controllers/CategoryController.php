@@ -31,7 +31,7 @@ class CategoryController extends Controller
 
     ]);
 
-    
+    notify()->success('Caategory Created');
     return redirect()->back();
 }
 
@@ -39,7 +39,11 @@ public function delete ($cat_id)
 {
   $category =Category:: find($cat_id);
   $category->delete ();
-  
+
+
+
+  notify()->error('category deleted');
+
   return redirect()->back();
  
 
