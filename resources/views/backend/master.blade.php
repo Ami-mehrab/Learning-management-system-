@@ -38,11 +38,11 @@
 
     @include('notify::components.notify')
         <!-- ========== Topbar Start ========== -->
-        @include('fixed.navbar')
+        @include('backend.fixed.navbar')
         <!-- ========== Topbar End ========== -->
 
         <!-- ========== Left Sidebar Start ========== -->
-        @include('fixed.sidebar')
+        @include('backend.fixed.sidebar')
         <!-- ========== Left Sidebar End ========== -->
 
         <!-- ============================================================== -->

@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Instructor extends Model
 {
     protected $guarded =[];
+
+    public function course(){
+        return $this->hasMany(course::class);
+    }
+
+  
 }

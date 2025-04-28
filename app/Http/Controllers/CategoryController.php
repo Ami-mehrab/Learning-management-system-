@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function list (){
         $cat = Category::all ();
-        return view ('crud.categorylist',compact('cat'));
+        return view ('backend.crud.categorylist',compact('cat'));
 
 
         
@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function form ()
     {
 
-        return view ('crud.categorycreate') ;
+        return view ('backend.crud.categorycreate') ;
     }
     public function store (Request $request   )
     {

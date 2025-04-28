@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Course_name');
             $table->string('Gender');
             $table->string('Phone');
             $table->string('Email');
             $table->string('Date_of_Birth');
+            $table->string('Image');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Instructor;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -11,15 +12,16 @@ class CourseController extends Controller
     public function mycourse (){
 
         $course =Course::all();
-        $course=Course::with('category')->paginate(1);
+        $course=Course::with('category')->paginate(2);
 
-        return view ('crud.courselist',compact('course'));
+        return view ('backend.crud.courselist',compact('course'));
     }  
 
     public function create (){
         $category=Category::all();
+        $instructor=Instructor::all();
         
-        return view ('crud.coursecreate',compact('category'));
+        return view ('backend.crud.coursecreate',compact('category','instructor'));
 
     }
 
@@ -31,12 +33,12 @@ class CourseController extends Controller
             "name"=>$request ->course,
             "category_id"=>$request ->category_id,
             "outline"=>$request ->course_outline,
-            "instructor"=>$request ->course_instructor,
+            "instructor_id"=>$request ->instructor_id,
             "duration"=>$request ->course_duration,
             "price" =>$request ->course_price
 
         ]);
-        return redirect()->back();
+        return redirect()->Route('course');
         
     }
     public function delete($id){

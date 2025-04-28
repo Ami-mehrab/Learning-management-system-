@@ -15,5 +15,8 @@ class Course extends Model
  {
     return $this->belongsTo(category::class);
  }
+public function instructor(){
+   return $this->belongsTo(instructor::class);
+}
 
 }

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 
 @section('content')
 <div class="content-page">
@@ -15,8 +15,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Course</th>
-                                    <th>Category</th>
-                                    <th>Cat_name</th>
+                                    <th>Category Name</th>
                                     <th>Outline</th>
                                     <th>Instructor</th>
                                     <th>Duration</th>
@@ -25,29 +24,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach ($course as  $courses)
-    
-                                    <tr>
-                                        <td>{{$courses ->id}} </td>
-                                        <td> {{$courses ->name}}</td>
-                                        <td> {{$courses ->category_id}}</td>
-                                        <td> {{$courses ->category-> Name}}</td>
-                                        <td>{{$courses ->outline}}</td>
-                                        <td>{{$courses ->instructor}}</td>
-                                        <td>{{$courses ->duration}}</td>
-                                        <td>{{$courses ->price}}</td>
-                                        <td>
-                                            <a href="{{Route('coursedelete',$courses->id)}}" class="btn btn-info btn-sm">Delete</a>
-                                            <a href="" class="btn btn-warning btn-sm">Edit</a>
-                                           
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                            @foreach ($course as $courses)
+                                <tr>
+                                    <td>{{ $courses->id }}</td>
+                                    <td>{{ $courses->name }}</td>
+                                    <td>{{ $courses->category?->Name }}</td>
+                                    <td>{{ $courses->outline }}</td>
+                                    <td>{{ $courses->instructor?->Name }}</td>
+                                    <td>{{ $courses->duration }}</td>
+                                    <td>{{ $courses->price }}</td>
+                                    <td>
+                                        <a href="{{ Route('coursedelete', $courses->id) }}" class="btn btn-info btn-sm">Delete</a>
+                                        <a href="" class="btn btn-warning btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
-                        {{$course->links()}}
+                        {{ $course->links() }}
                     </div>
-
                 </div> <!-- End col -->
             </div> <!-- End row -->
         </div> <!-- End container-fluid -->

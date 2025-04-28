@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 
 @section('content')
 <div class="content-page">
@@ -10,7 +10,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{Route('course.store')}}" method="POST">
+                            <form action="{{Route('course.store')}}" method="POST" >
                                @csrf
                                
                         
@@ -19,7 +19,7 @@
                                     <input type="text" name="course" id="" class="" value="" required>
                              </div>
                              <div class="mb-3">
-                                    <label for="category" class="form-label">Course Category</label>
+                                    <label for="category" class="form-lphpabel">Course Category</label>
                                     <select name="category_id" class="form-select" aria-label="default">
                                         <option value="">Select Category</option>
                                         @foreach($category as $categories)
@@ -35,14 +35,20 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="instructor" class="form-label">Instructor</label>
-                                    <input type="text" name="course_instructor" id="" class="form-control @error('instructor') is-invalid @enderror" value="{{ old('instructor') }}" required>
                                    
+                                    <label for="instructor" class="form-label">Instructors</label>
+                                    <select name="instructor_id" id="" class="form-select" aria-label="Select instructor">
+                                        <option value="">Select Instructor</option>
+                                        @foreach($instructor as $instructors)
+                                         <option value="{{$instructors->id }}">{{$instructors->Name }}</option>
+                                        @endforeach
+                                    </select>
+                                
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="duration" class="form-label">Duration</label>
-                                    <input type="number" name="course_duration" id="" class="form-control @error('duration') is-invalid @enderror" value="{{ old('duration') }}" required>
+                                    <input type="text" name="course_duration" id="" class="form-control" value="{{ old('duration') }}" required>
                                    
                                 </div>
 
@@ -54,7 +60,7 @@
 
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-success">Save Course</button>
-                                    <a href="{{Route('course')}}" class="btn btn-secondary">back to list</a>
+                                    <!-- <a href="{{Route('course')}}" class="btn btn-secondary">back to list</a> -->
                                 </div>
 
                             </form>

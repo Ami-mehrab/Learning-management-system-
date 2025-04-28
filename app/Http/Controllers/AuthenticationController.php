@@ -9,7 +9,7 @@ class AuthenticationController extends Controller
 {
     public function viewlogin() {
 
-        return view('login');
+        return view('backend.login');
 
 
     }

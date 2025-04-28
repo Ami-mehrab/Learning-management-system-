@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,7 @@ Route::group(['middleware'=>'auth'],function(){
    
     //dashboard
 
-    Route::get ('/',[DashboardController::class,'home'] )->name('dashboard');
+    Route::get ('/dashboard',[DashboardController::class,'home'] )->name('dashboard');
 
     
 //category  routelist
@@ -47,10 +48,13 @@ Route::post ('/coursestore',[CourseController::class,'store'] ) ->name('course.s
 Route::get('/coursedelete/{id}',[CourseController::class,'delete'] ) ->name('coursedelete') ;
 //instructor routelist
 
-Route::get('instructorlist',[InstructorController::class,'myinstructor'])->name('instructor');
+Route::get('/instructorlist',[InstructorController::class,'myinstructor'])->name('instructor');
 Route::get('/instructor.create',[InstructorController::class,'create'])->name('i_list');
 Route::post('/instructor.store',[InstructorController::class,'store'])->name('i_store');
 Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->name('i_delete');
+//viewing instructor
+Route::get('/instructor.view/{id}',[InstructorController::class,'profile'])->name('i_view');
+
 
 //Student routelist
 
@@ -64,8 +68,9 @@ Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_
 
 });
 
-
-
+// Route for frontend 
+//home
+Route::get('/',[homeController::class,'myhome'])->name('home');
 
 
 

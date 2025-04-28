@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('category_id');
             $table->string ('name');
             $table->text ('outline');
-            $table->text('instructor');
+            $table->string('instructor_id');
             $table->text('duration');
             $table->float ('price') ;
             $table->timestamps();

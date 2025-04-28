@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function list()
     {
         $student=Student::all ();
-        return view ('crud.studentlist',compact ('student'));
+        return view ('backend.crud.studentlist',compact ('student'));
     }
 
     /**
