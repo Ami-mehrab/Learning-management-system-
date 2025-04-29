@@ -58,11 +58,10 @@ Route::get('/instructor.view/{id}',[InstructorController::class,'profile'])->nam
 
 //Student routelist
 
-Route::get('/studentlist',[StudentController::class,'list'])->name('student');
-Route::get('/studentcreate',[StudentController::class,'create'])->name('s_list');
-Route::post('/studentstore',[StudentController::class,'store'])->name('s_store');
-Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_delete');
-
+// Route::get('/studentlist',[StudentController::class,'list'])->name('student');
+// Route::get('/studentcreate',[StudentController::class,'create'])->name('s_list');
+// Route::post('/studentstore',[StudentController::class,'store'])->name('s_store');
+// Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_delete');
 
 });
 

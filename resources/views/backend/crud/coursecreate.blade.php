@@ -54,7 +54,7 @@
 
                                 <div class="mb-3">
                                     <label for="price" class="form-label">Price[BDT]</label>
-                                    <input type="number" name="course_price" id="" class="form-control @error('price') is-invalid @enderror" value="" required>
+                                    <input type="text" name="course_price" id="" class="form-control" value="" required>
                                    
                                 </div>
 

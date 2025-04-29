@@ -5,7 +5,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-11 mx-auto">
+                <div class="col-lg-15 mx-auto">
                     <h2 class="mb-4">Instructor List</h2>
                     <a class="btn btn-primary mb-3" href="{{Route('i_list')}}">Create Instructor</a>
 
@@ -19,6 +19,7 @@
                                     <th>Phone</th>
                                     <th>Email</th>
                                     <th>DOB</th>
+                                    <th>Status</th>
                                     <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
@@ -33,6 +34,13 @@
                                         <td>{{$instructors ->Phone}}</td>
                                         <td>{{$instructors ->Email}}</td>
                                         <td>{{$instructors ->Date_of_Birth}}</td>
+                                        <td> @if($instructors->status=='active')
+                                            <span class="badge bg-success">Active</span>
+                                            @else
+                                             <span class="badge bg-danger">Inactive</span>
+                                             @endif
+            
+                                        </td>
                                         <td><img src="{{'/uploads/instructor/'.$instructors->Image}}"> </td>
                                         <td class="text-nowrap">
 

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text ('outline');
             $table->string('instructor_id');
             $table->text('duration');
-            $table->float ('price') ;
+            $table->text('price') ;
             $table->timestamps();
         });
     }

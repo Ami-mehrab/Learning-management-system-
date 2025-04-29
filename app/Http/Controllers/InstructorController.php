@@ -39,6 +39,8 @@ class InstructorController extends Controller
             "Phone" => $request->i_phone,
             "Email" => $request->i_email,
             "Date_of_Birth" => $request->i_dob,
+            "bio"=>$request->i_bio,
+            "status"=>$request->status,
             "Image" => $fileName
            
         ]);

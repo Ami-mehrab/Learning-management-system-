@@ -57,14 +57,32 @@
                 <label for="dob" class="form-label">Date of Birth</label>
                 <input type="date" name="i_dob" class="form-control" id="dob" required>
             </div>
+                 <!-- biography -->
+
+                 <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
+                <input type="text" name="i_bio" class="form-control" id="" required>
+            </div>
+
+            <!-- status -->
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="male" value="active" required>
+                    <label class="form-check-label" for="active">Active</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="female" value="inactive">
+                    <label class="form-check-label" for="inactive">Inactive</label>
+                </div>
+            </div>
+
+       
 
            <!-- image file -->
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label for="Image" class="form-label">Image file </label>
                 <input type="file" name="Image" class="" id="" required>
-
-                <!-- <img id="imagePreview" src="#" alt="Preview Image" class="mt-2 img-thumbnail d-none"
-                              style="width: 100px; height: 100px;"> -->
 
             </div>
 

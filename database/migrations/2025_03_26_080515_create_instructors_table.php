@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('Phone');
             $table->string('Email');
             $table->string('Date_of_Birth');
+            $table->text('bio');
+            $table->string('status');
             $table->string('Image');
             $table->timestamps();
         });

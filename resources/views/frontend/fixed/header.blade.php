@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="user-login text-right col-lg-2">
-                    <a href="#"><i class="fas fa-edit"></i> Apply Now</a>
+                    <a href="#"><i class="fas fa-edit"></i>Register</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <a class="smooth-menu" href="#">Courses</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#">Advisor</a>
+                <a class="smooth-menu" href="#">Instructor</a>
             </li>
          
 

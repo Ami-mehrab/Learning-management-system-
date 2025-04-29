@@ -572,18 +572,18 @@
             </div>
             <div class="instructor-items text-center text-light">
                 <div class="row">
-
-                
+                    
                     <!-- Single Item -->
+                     @foreach ($instructor as $instructors)
                     
                     <div class="col-lg-4 col-md-6 single-item">
                         <div class="instructor-item">
                             <div class="info-box">
                                 
-                                <img src="" alt="Thumb">  
+                                <img src="{{'/uploads/instructor/'.$instructors->Image}}" style="height:200px;width:200px;" alt="Thumb">  
                                 <div class="info-title">
-                                    <h4>D.m arif afsar </h4>
-                                    <span>Chemistry specialist</span>
+                                    <h4> {{$instructors->Name}} </h4>
+                                    <span></span>
                                     <div class="social">
                                         <ul>
                                             <li class="facebook">
@@ -601,7 +601,7 @@
                             </div>    
                         </div>
                     </div> 
-                    
+                    @endforeach
 
                 </div>
             </div>
@@ -617,42 +617,41 @@
                 <div class="reg-items">
                     <div class="col-lg-6 reg-form default-padding-bottom">
                         <div class="site-heading text-left">
-                            <h2>Get a Free online Registration</h2>
+                            <h2>Free online Registration</h2>
                             <!-- <p>
                                 
                             </p> -->
                         </div>
-                        <form action="#">
+                        <form action="" method="" >
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="First Name" type="text">
+                                        <input class="form-control" placeholder="First Name" type="text" required >
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Last Name" type="text">
+                                        <input class="form-control" placeholder="Last Name" type="text" required >
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Email*" type="email">
+                                        <input class="form-control" placeholder="Email*" type="email" required >
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <select>
-                                            <option value="1">Chose Subject</option>
-                                            <option value="2">Computer Engineering</option>
-                                            <option value="4">Accounting Technologies</option>
-                                            <option value="5">Web Development</option>
-                                            <option value="6">Machine Language</option>
+                                            <option value="">Chose Subject</option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Phone" type="text">
+                                        <input class="form-control" placeholder="Phone" type="text" required >
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
