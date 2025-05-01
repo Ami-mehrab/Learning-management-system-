@@ -27,6 +27,16 @@
                                         @endforeach
                                         </select>
                                     </div>
+                                    <!-- instructor name -->
+                                    <div class="mb-3">
+                                    <label for="instructor" class="form-lphpabel">Instructor </label>
+                                    <select name="instructor_id" class="form-select" aria-label="default">
+                                        <option value="">Select instructor</option>
+                                        @foreach($instructor as $instructors)
+                                        <option value="{{$instructors->id}}">{{$instructors->Name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
 
                                 <div class="mb-3">
                                     <label for="outline" class="form-label">Outline</label>
@@ -34,17 +44,7 @@
                                     
                                 </div>
 
-                                <div class="mb-3">
-                                   
-                                    <label for="instructor" class="form-label">Instructors</label>
-                                    <select name="instructor_id" id="" class="form-select" aria-label="Select instructor">
-                                        <option value="">Select Instructor</option>
-                                        @foreach($instructor as $instructors)
-                                         <option value="{{$instructors->id }}">{{$instructors->Name }}</option>
-                                        @endforeach
-                                    </select>
-                                
-                                </div>
+                   
 
                                 <div class="mb-3">
                                     <label for="duration" class="form-label">Duration</label>

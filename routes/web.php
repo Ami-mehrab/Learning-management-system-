@@ -53,7 +53,7 @@ Route::get('/instructor.create',[InstructorController::class,'create'])->name('i
 Route::post('/instructor.store',[InstructorController::class,'store'])->name('i_store');
 Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->name('i_delete');
 //viewing instructor
-Route::get('/instructor.view/{id}',[InstructorController::class,'profile'])->name('i_view');
+Route::get('/InstructorView/{id}',[InstructorController::class,'profile'])->name('i.view');
 
 
 //Student routelist
@@ -70,6 +70,9 @@ Route::get('/instructor.view/{id}',[InstructorController::class,'profile'])->nam
 // Route for frontend 
 //home
 Route::get('/',[homeController::class,'myhome'])->name('home');
+
+//registraion/login route
+Route::get('/register',[StudentController::class,'register'])->name('s.register');
 
 
 

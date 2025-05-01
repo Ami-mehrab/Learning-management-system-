@@ -6,6 +6,7 @@ use Dotenv\Repository\Adapter\GuardedWriter;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Course extends Model
 {
  protected $guarded =[];
@@ -15,8 +16,9 @@ class Course extends Model
  {
     return $this->belongsTo(category::class);
  }
-public function instructor(){
-   return $this->belongsTo(instructor::class);
-}
+ public function instructor()
+ {
+    return $this->belongsTo(instructor::class);
+ }
 
 }

@@ -16,7 +16,7 @@
                             <div class="col-lg-7">
                                 <div class="content">
                                     <h4>Own your future learning new skills online</h4>
-                                    <h1>Learn from best online training course</h1>
+                                    <h1>Learn from best online  course</h1>
                                     <a class="btn btn-light border btn-md" href="#">Learn more</a>
                                     <a class="btn btn-light effect btn-md" href="#">View Courses</a>
                                 </div>
@@ -44,7 +44,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum quibusdam sapiente nobis hic. Quaerat aperiam ad, fuga assumenda facere tempora? Amet quod debitis, sed, nam impedit eius ab atque.
                         </p> -->
                         
-                        <a class="btn btn-theme effect btn-md smooth-menu" href="">Register Now</a>
+                        <a class="btn btn-theme effect btn-md smooth-menu" href="{{Route('s.register')}}">Register Now</a>
                     </div>
                 </div>
             </div>
@@ -582,8 +582,8 @@
                                 
                                 <img src="{{'/uploads/instructor/'.$instructors->Image}}" style="height:200px;width:200px;" alt="Thumb">  
                                 <div class="info-title">
-                                    <h4> {{$instructors->Name}} </h4>
-                                    <span></span>
+                                    <h4> <a href="" style="color:#1f2937;" class="mt-1" alt="instructor's profile"> {{$instructors->Name}} </a></h4>
+                                    
                                     <div class="social">
                                         <ul>
                                             <li class="facebook">
@@ -607,134 +607,11 @@
             </div>
         </div>
     </section>
+
     <!--End instructor Area -->
 
-    <!-- Start Registration 
-    ============================================= -->
-    <div id="register" class="reg-area default-padding-top bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="reg-items">
-                    <div class="col-lg-6 reg-form default-padding-bottom">
-                        <div class="site-heading text-left">
-                            <h2>Free online Registration</h2>
-                            <!-- <p>
-                                
-                            </p> -->
-                        </div>
-                        <form action="" method="" >
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="First Name" type="text" required >
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Last Name" type="text" required >
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Email*" type="email" required >
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="">Chose Subject</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Phone" type="text" required >
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <button type="submit">
-                                        Rigister Now
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-6 thumb">
-                        <img src="/image" alt="Thumb">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Registration -->
 
- 
 
-    <!-- Start Registration 
-    ============================================= -->
-    <!-- <div class="reg-area default-padding-top bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="reg-items">
-                    <div class="col-lg-6 reg-form default-padding-bottom">
-                        <div class="site-heading text-left">
-                            <h2>Get a Free online Registration</h2>
-                            <p>
-                                written on charmed justice is amiable farther besides. Law insensible middletons unsatiable for apartments boy delightful unreserved. 
-                            </p>
-                        </div>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="First Name" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Last Name" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Email*" type="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <select>
-                                            <option value="1">Chose Subject</option>
-                                            <option value="2">Computer Engineering</option>
-                                            <option value="4">Accounting Technologies</option>
-                                            <option value="5">Web Development</option>
-                                            <option value="6">Machine Language</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="Phone" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <button type="submit">
-                                        Rigister Now
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-6 thumb">
-                        <img src="assets/img/contact.png" alt="Thumb">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Registration -->
 
     <!-- Start Testimonials 
     ============================================= -->

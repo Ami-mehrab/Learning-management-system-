@@ -46,7 +46,7 @@
 
                                         <a href="{{ route('i_delete', $instructors->id) }}" class="btn btn-danger btn-sm me-1">Delete</a>
                                          <a href="" class="btn btn-warning btn-sm me-1">Edit</a>
-                                         <a href="{{Route('i_view',$instructors->id)}}" class="btn btn-primary btn-sm">View</a>
+                                         <a href="{{Route('i.view',$instructors->id)}}" class="btn btn-primary btn-sm">View</a>
                                         </td>
 
                                     </tr>

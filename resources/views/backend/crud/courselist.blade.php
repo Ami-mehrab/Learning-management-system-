@@ -17,7 +17,6 @@
                                     <th>Course</th>
                                     <th>Category Name</th>
                                     <th>Outline</th>
-                                    <th>Instructor</th>
                                     <th>Duration</th>
                                     <th>Price</th>
                                     <th>Actions</th>
@@ -28,9 +27,9 @@
                                 <tr>
                                     <td>{{ $courses->id }}</td>
                                     <td>{{ $courses->name }}</td>
-                                    <td>{{ $courses->category?->Name }}</td>
+                                    <td>{{ $courses->category->Name }}</td>
                                     <td>{{ $courses->outline }}</td>
-                                    <td>{{ $courses->instructor?->Name }}</td>
+
                                     <td>{{ $courses->duration }}</td>
                                     <td>{{ $courses->price }}</td>
                                     <td>

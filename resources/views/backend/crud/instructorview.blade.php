@@ -1,137 +1,257 @@
-@extends('backend.master')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="content-page">
-    <div class="content">
-        <!-- Start Content -->
-        <div class="container-fluid">
-            <div class="container mt-5">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h2>{{ $instructor->name }}</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <h4>Profile Picture</h4>
-                                    </div>
-                                    <div class="card-body text-center">
-                                        @if($instructor->Image)
-                                            <img src="{{'/uploads/instructor/'.$instructor->Image}}" 
-                                                 alt="{{ $instructor->Name }}" 
-                                                 class="img-fluid rounded-circle" style="max-height: 300px;">
-                                        @else
-                                            <div class="p-5 bg-light text-center">
-                                                <i class="uil-user-circle" style="font-size: 5rem;"></i>
-                                                <p class="mt-3">No profile picture available</p>
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Actions</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="#" class="btn btn-primary btn-block mb-2">Edit Profile</a>
-                                        <a href="{{ route('i_delete', $instructor->id) }}" class="btn btn-danger btn-block mb-2" onclick="return confirm('Are you sure you want to delete this instructor?')">Delete Profile</a>
-                                        <a href="{{ route('instructor') }}" class="btn btn-secondary btn-block">Back to List</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <th width="200">Instructor ID</th>
-                                        <td>{{ $instructor->id }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Name</th>
-                                        <td>{{ $instructor->Name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Email</th>
-                                        <td>{{ $instructor->Email }}</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <th>Status</th>
-                                        <td>
-                                            <span class="badge {{ $instructor->status == 'active' ? 'bg-success' : 'bg-danger' }}">
-                                                {{ $instructor->status }}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Joined At</th>
-                                        <td>{{ $instructor->created_at }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Last Updated</th>
-                                        <td>{{ $instructor->updated_at }}</td>
-                                    </tr>
-                                </table>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor's profile</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General card styles */
+    .user-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 1rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
 
-                                <div class="mt-4">
-                                    <h4>Biography</h4>
-                                    <div class="p-3 bg-light">
-                                        {{ $instructor->bio ?? 'No biography available.' }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    /* Card cover styles */
+    .card-cover {
+      margin-bottom: 2rem;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-                        <div class="mt-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Courses by {{$instructor->name }}</h4>
-                                <a href="{{Route('courselist', $instructor->id) }}" class="btn btn-success">Add New Course</a>
-                            </div>
+    /* Avatar wrapper - positioned relative to contain the absolutely positioned avatar */
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
 
-                            @if($instructor->courses && $instructor->courses->count() > 0)
-                                <table class="table table-bordered table-striped">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Category</th>
-                                            <th>Price</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($instructor->courses as $course)
-                                        <tr>
-                                            <td>{{ $course->id }}</td>
-                                            <td>{{ $course->title }}</td>
-                                            <td>{{ $course->category->name ?? 'N/A' }}</td>
-                                            <td>${{ number_format($course->price, 2) }}</td>
-                                            <td>
-                                                <span class="badge {{$course->status == 'active' ? 'bg-success' : 'bg-danger' }}">
-                                                    {{ $course->status }}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-primary">Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this course?')">Delete</a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <div class="alert alert-info">
-                                    No courses available. Click "Add New Course" to create one.
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
+    /* Avatar styling */
+    .avatar {
+      position: relative;
+      background-color: rgba(169, 169, 169, 0.5);
+      /* Light mode */
+      padding: 0.5rem;
+      background-color: rgba(97, 97, 97, 0.5);
+      /* Dark mode */
+      border-radius: 50%;
+      z-index: 10;
+    }
+
+    .avatar-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid white;
+      /* Optional, adds a border for visual emphasis */
+    }
+
+    /* Card body styling */
+    .card-body {
+      padding: 1.25rem;
+      text-align: center;
+      flex-grow: 1;
+      z-index: 5;
+      position: relative;
+    }
+
+    /* Card name styling */
+    .card-name {
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    /* Card information styling */
+    .card-info {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #4b5563;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+      line-height: 1.5;
+      color: #1f2937;
+      overflow: visible;
+      white-space: normal;
+      word-wrap: break-word;
+      max-width: 300px;
+    }
+
+    th {
+      background-color: #f3f4f6;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    tr:hover {
+      background-color: #f9fafb;
+    }
+
+    /* Dark mode table styles */
+    body.dark-mode table {
+      background-color: #2d3748;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode th {
+      background-color: #374151;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode td {
+      border-bottom-color: #4b5563;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode tr:hover {
+      background-color: #374151;
+    }
+
+    /* Responsive table */
+    @media (max-width: 640px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    /* Dark mode styles */
+    body {
+      background-color: #1f2937;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode .user-card {
+      background-color: #2d3748;
+    }
+
+    body.dark-mode .card-info {
+      color: #cbd5e0;
+    }
+
+    body.dark-mode table {
+      background-color: #2d3748;
+    }
+
+    body.dark-mode th {
+      background-color: #374151;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode td {
+      border-bottom-color: #4b5563;
+    }
+
+    body.dark-mode tr:hover {
+      background-color: #374151;
+    }
+    .colorful-btn {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.colorful-btn:hover {
+  background: linear-gradient(45deg, #ff8ee0, #6a66f2);
+  transform: scale(1.05);
+}
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- Cards: User -->
+  <div class="user-card">
+    <!-- Card Cover/Avatar -->
+    <div class="card-cover" style="background-image: url('https://cdn.tailkit.com/media/placeholders/photo-JgOeRuGD_Y4-800x400.jpg');">
+      <div class="avatar-wrapper">
+        <div class="avatar">
+          <img src="{{'/uploads/instructor/'.$instructor->Image}}" alt="User Avatar" class="avatar-img">
         </div>
+      </div>
     </div>
-</div>
+    <!-- END Card Cover/Avatar -->
 
-@endsection
+    <!-- Card Body -->
+    <div class="card-body">
+      <h3 class="card-name"style ="color:#1f2937">{{$instructor->Name}}</h3>
+      <p class="card-info"></p>
+
+      <!-- User Information Table -->
+      <table>
+        <thead>
+          <tr>
+            <th style ="color:green">Category</th>
+            <th style ="color:green">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Instructor ID</td>
+            <td>{{$instructor->id}}</td>
+          </tr>
+        
+          <tr>
+            <th>Date of birth</th>
+            <td>{{$instructor->Date_of_Birth}}</td>
+          </tr>
+          <tr>
+            <td>Biography</td>
+            <td>{{$instructor->bio}}</td>
+          </tr>
+         
+          <tr>
+            <td>Email</td>
+            <td>{{$instructor->Email}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end">
+
+      <a href="{{ Route('instructor') }}" class="btn colorful-btn">Back to list</a>
+
+      </div>
+      <!-- END User Information Table -->
+    </div>
+    <!-- END Card Body -->
+  </div>
+  <!-- END Cards: User -->
+</body>
+
+</html>

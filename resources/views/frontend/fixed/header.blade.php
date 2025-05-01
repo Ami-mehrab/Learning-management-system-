@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="user-login text-right col-lg-2">
-                    <a href="#"><i class="fas fa-edit"></i>Register</a>
+                    <a href="{{Route('s.register')}}"><i class="fas fa-edit"></i>Register</a>
                 </div>
             </div>
         </div>

@@ -13,6 +13,7 @@ class CourseController extends Controller
 
         $course =Course::all();
         $course=Course::with('category')->paginate(2);
+        
 
         return view ('backend.crud.courselist',compact('course'));
     }  
@@ -31,9 +32,9 @@ class CourseController extends Controller
 
         Course:: create([
             "name"=>$request ->course,
+            "instructor_id"=>$request ->instructor_id,
             "category_id"=>$request ->category_id,
             "outline"=>$request ->course_outline,
-            "instructor_id"=>$request ->instructor_id,
             "duration"=>$request ->course_duration,
             "price" =>$request ->course_price
 

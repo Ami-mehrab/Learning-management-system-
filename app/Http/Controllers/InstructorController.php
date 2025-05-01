@@ -11,13 +11,15 @@ class InstructorController extends Controller
     public function myinstructor(){
 
       $instructor=Instructor::all();
+      
+     
      
       return view ('backend.crud.instructorlist',compact('instructor'));
 
 
     }
     public function create(){
-       
+        
         return view('backend.crud.instructorcreate');
 
     }
@@ -54,8 +56,9 @@ class InstructorController extends Controller
 
     }
 public function profile($id){
+    
 
-    $instructor=Instructor::with('course')->findOrFail ($id);
+    $instructor=Instructor::find($id);
 
     return view ('backend.crud.instructorview',compact('instructor'));
 }
