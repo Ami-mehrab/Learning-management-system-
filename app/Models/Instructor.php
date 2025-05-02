@@ -9,9 +9,9 @@ class Instructor extends Model
 {
     protected $guarded =[];
 
-    // public function course(){
-    //     return $this->hasMany(course::class);
-    // }
+    public function course(){
+        return $this->hasMany(course::class);
+    }
 
   
 }

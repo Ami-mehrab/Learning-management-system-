@@ -209,6 +209,7 @@
     <!-- END Card Cover/Avatar -->
 
     <!-- Card Body -->
+    
     <div class="card-body">
       <h3 class="card-name"style ="color:#1f2937">{{$instructor->Name}}</h3>
       <p class="card-info"></p>
@@ -226,19 +227,27 @@
             <td>Instructor ID</td>
             <td>{{$instructor->id}}</td>
           </tr>
-        
+          <tr>
+            @foreach($course as $courses)
+            <th>Course Name</th>
+            <td>{{$courses->name}}</td>
+          </tr>
+        @endforeach
           <tr>
             <th>Date of birth</th>
             <td>{{$instructor->Date_of_Birth}}</td>
           </tr>
           <tr>
-            <td>Biography</td>
-            <td>{{$instructor->bio}}</td>
+            <td>Phone</td>
+            <td>{{$instructor->phone}}</td>
           </tr>
-         
           <tr>
             <td>Email</td>
             <td>{{$instructor->Email}}</td>
+          </tr>
+          <tr>
+            <td>Biography</td>
+            <td>{{$instructor->bio}}</td>
           </tr>
         </tbody>
       </table>

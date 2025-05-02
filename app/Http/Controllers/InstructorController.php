@@ -57,10 +57,10 @@ class InstructorController extends Controller
     }
 public function profile($id){
     
-
     $instructor=Instructor::find($id);
+    $course=Course::where ('instructor_id',$id)->get();
 
-    return view ('backend.crud.instructorview',compact('instructor'));
+    return view ('backend.crud.instructorview',compact('instructor','course'));
 }
     
 }
