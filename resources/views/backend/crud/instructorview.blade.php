@@ -239,7 +239,7 @@
           </tr>
           <tr>
             <td>Phone</td>
-            <td>{{$instructor->phone}}</td>
+            <td>{{$instructor->Phone}}</td>
           </tr>
           <tr>
             <td>Email</td>

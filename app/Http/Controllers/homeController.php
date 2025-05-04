@@ -9,6 +9,7 @@ class homeController extends Controller
     public function myhome(){
 
         $instructor=Instructor::all();
+       
         return view('frontend.home',compact('instructor'));
     }
 }

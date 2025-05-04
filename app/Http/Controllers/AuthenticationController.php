@@ -22,7 +22,7 @@ class AuthenticationController extends Controller
 
         if($check)
         {
-           notify()->success('Logged in successfully');
+            toastr()->success('logged in  successfully!');
             return redirect()->Route('dashboard');
         }
         else{

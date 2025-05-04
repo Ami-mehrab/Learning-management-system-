@@ -56,23 +56,18 @@ Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->na
 Route::get('/InstructorView/{id}',[InstructorController::class,'profile'])->name('i.view');
 
 
-//Student routelist
-
-// Route::get('/studentlist',[StudentController::class,'list'])->name('student');
-// Route::get('/studentcreate',[StudentController::class,'create'])->name('s_list');
-// Route::post('/studentstore',[StudentController::class,'store'])->name('s_store');
-// Route::get('/student.delete/{id}',[StudentController::class,'delete'])->name('s_delete');
-
 });
 
 });
 
-// Route for frontend 
-//home
+// Route for frontend //home
+
 Route::get('/',[homeController::class,'myhome'])->name('home');
-
 //registraion/login route
-Route::get('/register',[StudentController::class,'register'])->name('s.register');
+Route::get('/studens/regitster',[StudentController::class,'viewregister'])->name('s.register');
+Route::post('/student/registration/submit',[StudentController::class,'store'])->name('register.store');
+Route::get('/student/login',[StudentController::class,'viewlogin'])->name('s.login');
+Route::post('/loggedin',[StudentController::class,'loginstore'])->name('login.store');
 
 
 

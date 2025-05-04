@@ -9,7 +9,7 @@
                     <div class="info box">
                         <ul>
                             <li>
-                                Have any question?  +123 456 7890
+                                Have any question?
                             </li>
                             <li>
                                 <i class="fas fa-envelope-open"></i>
@@ -20,6 +20,9 @@
                 </div>
                 <div class="user-login text-right col-lg-2">
                     <a href="{{Route('s.register')}}"><i class="fas fa-edit"></i>Register</a>
+                </div>
+                <div class="user-login text-right col-lg-2">
+                    <a href="{{Route('s.login')}}"><i class="fas fa-edit"></i>LogIn</a>
                 </div>
             </div>
         </div>
