@@ -221,7 +221,7 @@
     </div>
     <!-- End Top Categories & Trending Courses -->
      
-    <!-- Start Popular Courses 
+    <!-- Start Popular Courses  -->
     ============================================= -->
     <div id="courses" class="popular-courses circle carousel-shadow bg-gray default-padding">
         <div class="container">
@@ -235,14 +235,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+             <div class="row">
                 <div class="col-lg-12">
                     <div class="popular-courses-items bottom-price popular-courses-carousel owl-carousel owl-theme">
                         <!-- Single Item -->
-                        <div class="item">
+                        <div class="item"> -->
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/img/courses/6.https://validthemes.net/site-template/examin/assets/img/courses/6.jpg" alt="Thumb">
+                                    <img src="" alt="Thumb">
                                 </a>
                                 <div class="overlay">
                                     <a class="btn btn-theme effect btn-sm" href="#">
@@ -263,7 +263,7 @@
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star-half-alt"></i>
-                                            <span>4.5 (23,890)</span>
+                                            <span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -291,226 +291,16 @@
                             </div>
                         </div>
                         <!-- End Single Item -->
-                        <!-- Single Item -->
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://validthemes.net/site-template/examin/assets/img/courses/2.jpg" alt="Thumb">
-                                </a>
-                                <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="https://validthemes.net/site-template/examin/assets/img/team/4.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Akua Paul</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>5 (1,890)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="#">Social Science & Humanities</a></h4>
-                                <div class="cats">
-                                    <a href="#">Social</a>
-                                    <a href="#">Online</a>
-                                </div>
-                                <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
-                                </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $12.00
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Item -->
-                        <!-- Single Item -->
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://validthemes.net/site-template/examin/assets/img/courses/3.jpg" alt="Thumb">
-                                </a>
-                                <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="https://validthemes.net/site-template/examin/assets/img/team/3.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Jon Babu</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span>4.7 (890)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="#">Actualized Leadership Network</a></h4>
-                                <div class="cats">
-                                    <a href="#">Online</a>
-                                    <a href="#">Source</a>
-                                </div>
-                                <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
-                                </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 8,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 126:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        Free
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Item -->
-                        <!-- Single Item -->
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://validthemes.net/site-template/examin/assets/img/courses/4.jpg" alt="Thumb">
-                                </a>
-                                <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="https://validthemes.net/site-template/examin/assets/img/team/7.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Babu Paol</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span>5 (980)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="#">Machine Learning Management</a></h4>
-                                <div class="cats">
-                                    <a href="#">PHP</a>
-                                    <a href="#">Programming</a>
-                                </div>
-                                <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
-                                </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 8,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 256:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $124.00
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Item -->
-                        <!-- Single Item -->
-                        <div class="item">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="https://validthemes.net/site-template/examin/assets/img/courses/5.jpg" alt="Thumb">
-                                </a>
-                                <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
-                                        <i class="fas fa-chart-bar"></i> Enroll Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="https://validthemes.net/site-template/examin/assets/img/team/8.jpg" alt="Thumb"></a>
-                                    </div>
-                                    <div class="others">
-                                        <a href="#">Mickel Clark</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span>4.5 (23,890)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="#">Online Programming</a></h4>
-                                <div class="cats">
-                                    <a href="#">Education</a>
-                                    <a href="#">Science</a>
-                                </div>
-                                <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
-                                </p>
-                                <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
-                                    <div class="price-btn">
-                                        $12.00
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Item -->
+
+                        
                     </div>
                 </div>
-            </div>
+            <!-- </div> --> 
         </div>
-    </div>
-    <!-- End Popular Courses -->
+     </div> -->
+    <!-- End Popular Courses
 
-    <!-- Start Fun Factor 
+    // Start Fun Factor 
     ============================================= -->
     <div class="fun-factor-area default-padding bottom-less text-center bg-fixed shadow dark-hard" style="background-image: url(assets/img/banner/1.jpg);">
         <div class="container">
@@ -553,10 +343,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Fun Factor -->
+    </div> 
+    <!-- End Fun Factor
 
-    <!-- Start instructors Area
+    // Start instructors Area
     ============================================= -->
     <section id="instructor" class="instructor-area default-padding bottom-less">
         <div class="container">

@@ -19,6 +19,7 @@
                                     <th>Outline</th>
                                     <th>Duration</th>
                                     <th>Price</th>
+                                    <th>Image</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -29,9 +30,9 @@
                                     <td>{{ $courses->name }}</td>
                                     <td>{{ $courses->category->Name }}</td>
                                     <td>{{ $courses->outline }}</td>
-
                                     <td>{{ $courses->duration }}</td>
                                     <td>{{ $courses->price }}</td>
+                                    <td><img src="{{'/uploads/course/'.$courses->image}}" class=""> </td>
                                     <td>
                                         <a href="{{ Route('coursedelete', $courses->id) }}" class="btn btn-info btn-sm">Delete</a>
                                         <a href="" class="btn btn-warning btn-sm">Edit</a>

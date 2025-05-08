@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Auth;
 use function Laravel\Prompts\error;
 
 class StudentController extends Controller
@@ -18,6 +18,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        //for registration 
 
         $validation = Validator::make($request->all(), [
 
@@ -46,8 +47,8 @@ class StudentController extends Controller
         Student::create([
             "username" => $request->username,
             "email" => $request->email,
-            "password" => $request->password,
-            "password_confirmation" => $request->password_confirmation
+            "password" => bcrypt($request->password)
+          
 
 
         ]);
@@ -62,8 +63,12 @@ class StudentController extends Controller
 
         return view('frontend.login');
     }
+
+
     public function loginstore(Request $request)
+  
     {
+          //for login
 
         // dd($request->all());
 
@@ -72,7 +77,7 @@ class StudentController extends Controller
 
 
 
-            'username' => 'required|string',
+            'email' => 'required|email',
             'password' => 'required|min:6'
 
         ]);
@@ -88,21 +93,27 @@ class StudentController extends Controller
             return redirect()->back();
 
 
-            dd($request->all());
-            $credentials = $request->except('_token');
-            $check = auth('student')->attempt($credentials);
+            
+           
+        }
 
-            if ($check) {
+      // dd($request->all());
 
-                toastr()->success('logged in  successfully!');
+      //checking credentials 
 
-                return redirect()->route('home');
-            } else {
+        $credentials = $request->except('_token');
+        $check = Auth::guard('student')->attempt($credentials);
 
-                toastr()->error('invalid credentials');
+        if ($check) {
 
-                return redirect()->back();
-            }
+            toastr()->success('logged in  successfully!');
+
+            return redirect()->route('home');
+        } else {
+
+            toastr()->error('invalid credentials');
+
+            return redirect()->back();
         }
     }
 }

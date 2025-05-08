@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CourseviewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\InstructorController;
@@ -38,7 +39,7 @@ Route::group(['middleware'=>'auth'],function(){
 Route::get ('/categorylist',[CategoryController::class,'list'] )->name('category.list');
 Route::get ('/categorycreate',[CategoryController::class,'form'] )->name('cat.create');   
 Route::post ('/categorystore',[CategoryController::class,'store'] )->name('cat.store'); 
-Route:: get('/categorydelete/ {cat_delete}',[CategoryController::class,'delete']) ->name ('cat.delete');
+Route:: get('/categorydelete/ {id}',[CategoryController::class,'delete']) ->name ('cat.delete');
 
 //course routelist
 
@@ -68,6 +69,12 @@ Route::get('/studens/regitster',[StudentController::class,'viewregister'])->name
 Route::post('/student/registration/submit',[StudentController::class,'store'])->name('register.store');
 Route::get('/student/login',[StudentController::class,'viewlogin'])->name('s.login');
 Route::post('/loggedin',[StudentController::class,'loginstore'])->name('login.store');
+
+//courseview Route
+
+Route::get('/course/view',[CourseviewController::class,'viewcourse'])->name('course.view');
+
+
 
 
 

@@ -41,7 +41,7 @@
                                              @endif
             
                                         </td>
-                                        <td><img src="{{'/uploads/instructor/'.$instructors->Image}}"> </td>
+                                        <td><img src="{{'/uploads/instructor/'.$instructors->Image}}" > </td>
                                         <td class="text-nowrap">
 
                                         <a href="{{ route('i_delete', $instructors->id) }}" class="btn btn-danger btn-sm me-1">Delete</a>

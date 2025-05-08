@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+
+use function Laravel\Prompts\error;
 
 class CategoryController extends Controller
 {
@@ -23,6 +27,27 @@ class CategoryController extends Controller
     public function store (Request $request   )
     {
 
+        //validation
+
+        $validation=Validator::make($request->all(),[
+
+            'cat_name'=>'required|string',
+            'cat_desc'=>'required|string'
+
+        ]);
+
+        if($validation->fails()){
+
+            toastr()->title('Category creation')->options(['progressBar' => false])
+            
+            ->error($validation->getMessageBag());
+
+            return redirect()->back();
+        }
+
+
+        //QUERY
+
     //    dd($request->all());
     Category::create ([
 
@@ -31,14 +56,17 @@ class CategoryController extends Controller
 
     ]);
 
-    notify()->success('Caategory Created');
-    return redirect()->back();
+    toastr()->title('Instructor creation')->options(['progressBar' => false])
+    ->success('Category created successfully');
+
+
+      return redirect()-> Route('category.list');
 }
 
-public function delete ($cat_id)
+public function delete ($id)
 {
-  $category =Category:: find($cat_id);
-  $category->delete ();
+  Category:: find($id)->delete ();
+ 
 
 
 

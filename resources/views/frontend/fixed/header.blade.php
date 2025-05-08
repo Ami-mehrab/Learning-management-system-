@@ -65,7 +65,7 @@
                 <a class="smooth-menu" href="#">Category</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#">Courses</a>
+                <a class="smooth-menu" href="{{Route('course.view')}}">Courses</a>
             </li>
             <li>
                 <a class="smooth-menu" href="#">Instructor</a>

@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('category_id'); 
             $table->string('instructor_id'); 
             $table->string ('name');
-            $table->text ('outline');
-            $table->text('duration');
-            $table->text('price') ;
+            $table->string ('outline');
+            $table->string('duration');
+            $table->string('price') ;
+            $table->string('image') ;
             $table->timestamps();
         });
     }

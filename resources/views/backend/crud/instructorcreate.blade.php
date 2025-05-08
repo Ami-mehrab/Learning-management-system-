@@ -55,7 +55,7 @@
                                 <!-- Date of Birth -->
                                 <div class="mb-3">
                                     <label for="dob" class="form-label">Date of Birth</label>
-                                    <input type="date" name="i_dob" class="form-control" id="dob" required>
+                                    <input type="date" name="i_dob" class="form-control" id="" required>
                                 </div>
                                 <!-- biography -->
 

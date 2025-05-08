@@ -208,8 +208,8 @@ body {
        
 
         <div class="input-box animation" style="--D:1; --S:22">
-          <input type="text" name="username" required />
-          <label>Username</label>
+          <input type="email" name="email" required />
+          <label>Email</label>
           <box-icon type='solid' name='user'></box-icon>
         </div>
 

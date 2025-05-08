@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Instructor;
+use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
+use function Laravel\Prompts\error;
 
 class InstructorController extends Controller
 {
@@ -22,6 +26,7 @@ class InstructorController extends Controller
         
         return view('backend.crud.instructorcreate');
 
+
     }
 
     public function store(Request $request ){
@@ -32,8 +37,37 @@ class InstructorController extends Controller
             $fileName = date('YmdHis').'.'. $file->getClientOriginalExtension();
             $file->storeAs('/instructor',$fileName);
         }
-      
+        //validatio 
+
+        // dd($request->all());
+        $validation=Validator::make($request->all(),[
+
+            'i_name'=> 'required|string',
+            'i_gender'=> 'required|in:male,female,other',
+            'i_phone'=> 'required|string',
+
+            'i_email'=> 'required|email|unique:users,email',
+
+            'i_dob' => [
+                'required',
+                'date_format:Y-m-d',
+                'before:today',
+                'before_or_equal:' . Carbon::now()->subYears(25)->format('Y-m-d'),
+            ],
+            'i_bio'=>'required|string|min:10',
+            'status'=>'required|string',
+            'Image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240'
+        ]);
+      if($validation->fails()){
+
+       
+        toastr()->title('Instructor creation')->options(['progressBar' => false])
+        ->error($validation->getMessageBag());
+
+        return redirect()-> Route('instructor');
+      }
         
+    //   dd($request->all());
 
         Instructor::create([
             "Name" => $request->i_name,
@@ -46,6 +80,11 @@ class InstructorController extends Controller
             "Image" => $fileName
            
         ]);
+
+        toastr()->title('Instructor creation')->options(['progressBar' => false])
+        ->success(' Created Successfully');
+       
+
         return redirect()-> Route('instructor');
       
     }
