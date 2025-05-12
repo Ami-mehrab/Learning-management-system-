@@ -222,7 +222,7 @@
     <!-- End Top Categories & Trending Courses -->
      
     <!-- Start Popular Courses  -->
-    ============================================= -->
+    =============================================
     <div id="courses" class="popular-courses circle carousel-shadow bg-gray default-padding">
         <div class="container">
             <div class="row">
@@ -239,57 +239,52 @@
                 <div class="col-lg-12">
                     <div class="popular-courses-items bottom-price popular-courses-carousel owl-carousel owl-theme">
                         <!-- Single Item -->
-                        <div class="item"> -->
+                       @foreach ($course as $courses)
+                        <div class="item"> 
                             <div class="thumb">
-                                <a href="#">
-                                    <img src="" alt="Thumb">
+                                <a href=""> 
+                                    <img src="{{'/uploads/course/'.$courses->image}}" alt="Thumb">
                                 </a>
                                 <div class="overlay">
                                     <a class="btn btn-theme effect btn-sm" href="#">
                                         <i class="fas fa-chart-bar"></i> Enroll Now
                                     </a>
                                 </div>
-                            </div>
+                            </div>    
+                                               
                             <div class="info">
+                           
                                 <div class="author-info">
-                                    <div class="thumb">
-                                        <a href="#"><img src="https://validthemes.net/site-template/examin/assets/img/team/2.jpg" alt="Thumb"></a>
+                               
+                                    <div class="">
+
+                                        <a href="" ><img src="" alt=""></a> 
+                                       
                                     </div>
-                                    <div class="others">
-                                        <a href="#">Munil Druva</a>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span></span>
-                                        </div>
-                                    </div>
+                                 
+                                
                                 </div>
-                                <h4><a href="#">Java Programming Masterclass</a></h4>
+                              
+                                <h4><a href=""></a> {{$courses->name}}</h4>
                                 <div class="cats">
-                                    <a href="#">Education</a>
-                                    <a href="#">Science</a>
+                                    <a href=""> {{ $courses->category->Name }}</a>
+                                    <a href="#"></a>
                                 </div>
                                 <p>
-                                    Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment.
+                                {{$courses->outline}}
                                 </p>
                                 <div class="bottom-info">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-user"></i> 6,690
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i> 16:00
-                                        </li>
-                                    </ul>
+                                
                                     <div class="price-btn">
-                                        Free
+                                    {{ $courses->price }}
                                     </div>
                                 </div>
                             </div>
+                         
+
                         </div>
+                        @endforeach
+                       
                         <!-- End Single Item -->
 
                         
@@ -297,7 +292,7 @@
                 </div>
             <!-- </div> --> 
         </div>
-     </div> -->
+     </div> 
     <!-- End Popular Courses
 
     // Start Fun Factor 

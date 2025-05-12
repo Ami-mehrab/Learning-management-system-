@@ -26,14 +26,15 @@ class AuthenticationController extends Controller
             return redirect()->Route('dashboard');
         }
         else{
-            notify()->error('incorrect credentials');
+            toastr()->error('incorrect credentials');
             return redirect()->back();
         }
     
     }
     public function logout(){
         Auth::logout();
-        notify()->success('Successfully logged out');
+
+        toastr()->error('logged out successfully');
         return redirect()->Route('login');
     }
 

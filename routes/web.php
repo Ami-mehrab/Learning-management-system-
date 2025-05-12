@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseviewController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\StudentController;
@@ -61,7 +62,8 @@ Route::get('/InstructorView/{id}',[InstructorController::class,'profile'])->name
 
 });
 
-// Route for frontend //home
+// Route for frontend 
+//home
 
 Route::get('/',[homeController::class,'myhome'])->name('home');
 //registraion/login route
@@ -73,6 +75,7 @@ Route::post('/loggedin',[StudentController::class,'loginstore'])->name('login.st
 //courseview Route
 
 Route::get('/course/view',[CourseviewController::class,'viewcourse'])->name('course.view');
+
 
 
 
