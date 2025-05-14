@@ -108,7 +108,7 @@ class StudentController extends Controller
 
             toastr()->success('logged in  successfully!');
 
-            return redirect()->route('home');
+            return redirect()->route('place.enroll');
         } else {
 
             toastr()->error('invalid credentials');

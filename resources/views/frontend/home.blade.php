@@ -17,8 +17,8 @@
                                 <div class="content">
                                     <h4>Own your future learning new skills online</h4>
                                     <h1>Learn from best online  course</h1>
-                                    <a class="btn btn-light border btn-md" href="#">Learn more</a>
-                                    <a class="btn btn-light effect btn-md" href="#">View Courses</a>
+                                    <!-- <a class="btn btn-light border btn-md" href="#">Learn more</a> -->
+                                    <a class="btn btn-light effect btn-md" href="{{Route('course.view')}}">View Courses</a>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +246,7 @@
                                     <img src="{{'/uploads/course/'.$courses->image}}" alt="Thumb">
                                 </a>
                                 <div class="overlay">
-                                    <a class="btn btn-theme effect btn-sm" href="#">
+                                    <a class="btn btn-theme effect btn-sm" href="{{Route('enroll.cart',$courses->id)}}">
                                         <i class="fas fa-chart-bar"></i> Enroll Now
                                     </a>
                                 </div>
@@ -417,7 +417,7 @@
                 <div class="item">
                     <div class="row align-items-center">
                         <div class="col-lg-5 thumb">
-                            <img src="assets/img/team/2.jpg" alt="Thumb">
+                            <img src="" alt="Thumb">
                         </div>
                         <div class="col-lg-7 info">
                             <p>
@@ -428,9 +428,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- end Item -->
+
                 <!-- Single Item -->
-                <!-- Single Item -->
-                <div class="item">
+                <!-- <div class="item">
                     <div class="row align-items-center">
                         <div class="col-lg-5 thumb">
                             <img src="assets/img/team/3.jpg" alt="Thumb">
@@ -443,40 +444,12 @@
                             <span>Science Student</span>
                         </div>
                     </div>
-                </div>
-                <!-- Single Item -->
-                <!-- Single Item -->
-                <div class="item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 thumb">
-                            <img src="assets/img/team/4.jpg" alt="Thumb">
-                        </div>
-                        <div class="col-lg-7 info">
-                            <p>
-                                Procuring continued suspicion its ten. Pursuit brother are had fifteen distant has. Early had add equal china quiet visit. Appear an manner as no limits either praise.. 
-                            </p>
-                            <h4>Paol Druva</h4>
-                            <span>Development Student</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Item -->
-                <!-- Single Item -->
-                <div class="item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 thumb">
-                            <img src="assets/img/team/7.jpg" alt="Thumb">
-                        </div>
-                        <div class="col-lg-7 info">
-                            <p>
-                                Procuring continued suspicion its ten. Pursuit brother are had fifteen distant has. Early had add equal china quiet visit. Appear an manner as no limits either praise.. 
-                            </p>
-                            <h4>Druna Patia</h4>
-                            <span>Biology Student</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Item -->
+                </div> -->
+                <!-- end Item -->
+            
+               
+          
+           
             </div>
         </div>
     </div>

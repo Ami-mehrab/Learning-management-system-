@@ -65,6 +65,7 @@ Route::get('/InstructorView/{id}',[InstructorController::class,'profile'])->name
 // Route for frontend 
 //home
 
+
 Route::get('/',[homeController::class,'myhome'])->name('home');
 //registraion/login route
 Route::get('/studens/regitster',[StudentController::class,'viewregister'])->name('s.register');
@@ -73,8 +74,27 @@ Route::get('/student/login',[StudentController::class,'viewlogin'])->name('s.log
 Route::post('/loggedin',[StudentController::class,'loginstore'])->name('login.store');
 
 //courseview Route
-
 Route::get('/course/view',[CourseviewController::class,'viewcourse'])->name('course.view');
+
+//add to cart 
+Route::get('/student/{course}',[EnrollController::class,'addtocart'])->name('enroll.cart');
+//course cart view
+Route::get('/course/cartview',[EnrollController::class,'coursecartview'])->name('cart.view');
+
+
+
+
+Route::group(['middleware'=>'student'],function(){
+ //checkout course enrollment
+Route::get('/check/enrollment',[EnrollController::class,'checkEnroll'])->name('check.enroll');
+//place course enrollment
+Route::post('/place/enrollment',[EnrollController::class,'placeEnroll'])->name('place.enroll');
+
+});
+
+
+
+
 
 
 
