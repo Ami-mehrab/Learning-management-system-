@@ -82,13 +82,11 @@ Route::get('/student/{course}',[EnrollController::class,'addtocart'])->name('enr
 Route::get('/course/cartview',[EnrollController::class,'coursecartview'])->name('cart.view');
 
 
-
-
 Route::group(['middleware'=>'student'],function(){
  //checkout course enrollment
 Route::get('/check/enrollment',[EnrollController::class,'checkEnroll'])->name('check.enroll');
 //place course enrollment
-Route::post('/place/enrollment',[EnrollController::class,'placeEnroll'])->name('place.enroll');
+Route::post('/enrollment',[EnrollController::class,'placeEnroll'])->name('place.enroll');
 
 });
 

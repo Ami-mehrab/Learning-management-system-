@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('enrolls', function (Blueprint $table) {
             $table->id();
+            $table->string('student_id');
+            $table->string('student_name');
+            $table->string('student_phone');
+            $table->string('student_email');
+            $table->string('total');
+            $table->string('pay_method');
+            $table->string('Pay_Status')->default('un-paid');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

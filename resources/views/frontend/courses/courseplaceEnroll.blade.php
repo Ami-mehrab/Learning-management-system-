@@ -61,7 +61,7 @@
       </div>
 
       <!-- User Enrollment Info -->
-       <form action="{{Route('place.enroll')}}" method="POST"  novalidate="novalidate">
+       <form action="{{Route('place.enroll')}}" method="Post"  novalidate="novalidate">
         @csrf
       <div class="mb-4">
         <h5 class="mb-3">Your Details</h5>
@@ -98,10 +98,10 @@
             <img src="https://cdn-icons-png.flaticon.com/512/633/633603.png" alt="American Express" title="American Express" />
             <img src="https://cdn-icons-png.flaticon.com/512/3492/3492218.png" alt="PayPal" title="PayPal" />
           </div>
-          <select class="form-select" aria-label="Select Payment Method">
+          <select name="pay"  class="form-select" aria-label="Select Payment Method">
             <option selected>Select your payment method</option>
-            <option value="credit-card">Credit Card</option>
-            <option value="paypal">PayPal</option>
+            <option value="credit-card">SSL</option>
+            <option value="paypal">Cash</option>
             <option value="bank-transfer">Bank Transfer</option>
           </select>
         

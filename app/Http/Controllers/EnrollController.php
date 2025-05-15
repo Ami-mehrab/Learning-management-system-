@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\Enrollment;
+use App\Models\EnrollDetail;
+use App\Models\Enroll;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -81,32 +82,53 @@ class EnrollController extends Controller
 
         $mycart = Session::get('cart') ?? [];
         // dd($myCart);
-        return view('frontend.courses.coursecartview',compact('mycart'));
+        return view('frontend.courses.coursecartview', compact('mycart'));
     }
 
-    public function checkEnroll(){
+    public function checkEnroll()
+    {
+
+        $mycart = Session::get('cart') ?? [];
 
         return view('frontend.courses.courseplaceEnroll');
-
-    
     }
-    public function placeEnroll(Request $request){
+    public function placeEnroll(Request $request)
+    {
 
-dd($request ->all());
+        // dd($request->all());
 
-        Enrollment::create([
+        $myenrollment = Enroll::create([
 
-            'student_id'=>auth('student')->user()->id,
-            'student_name'=>$request->name,
-            'student_phone'=>$request->phone,
-            'student_email'=>$request->email,
-            'total'=>$request->total
-
+            'student_id' => auth('student')->user()->id,
+            'student_name' => $request->name,
+            'student_phone' => $request->phone,
+            'student_email' => $request->email,
+            'pay_method' => $request->pay,
+            'total' => $request->total
 
         ]);
+        $mycart = Session::get('cart');
 
+
+        foreach ($mycart as $cartdata) {
+
+
+            EnrollDetail::create([
+
+                'enrolledcourse_id' => $myenrollment->id,
+                'course_id' => $cartdata['id'],
+                'course_quantity' => $cartdata['quantity'],
+                'course_price' => $cartdata['price'],
+                'subtotal' => $cartdata['subtotal']
+
+
+
+
+            ]);
+        }
+
+        toastr()->title('Place Enrollment')->success(' Course enrolled successfull!');
+        $mycart = Session::forget('cart');
+        return redirect()->route('home');
     }
-
-
-
 }

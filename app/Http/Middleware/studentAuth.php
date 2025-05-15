@@ -22,7 +22,7 @@ class studentAuth
         }
 
         else{
-            toastr()->error('please login to enroll the course');
+            toastr()->warning('please login to enroll the course');
             return redirect()->route('s.login');
 
         }

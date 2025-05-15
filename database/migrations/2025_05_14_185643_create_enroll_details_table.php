@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('enroll_details', function (Blueprint $table) {
             $table->id();
+            $table->string('enrolledcourse_id');
+            $table->string('course_id');
+            $table->string('course_quantity');
+            $table->string('course_price');
+            $table->string('subtotal');
             $table->timestamps();
         });
     }

@@ -14,5 +14,9 @@ class CourseviewController extends Controller
         $course=Course::all();
         return view('frontend.courses.courseview',compact('course'));
     }
+    
+
+
+
 }
 
