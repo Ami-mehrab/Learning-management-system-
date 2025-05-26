@@ -18,11 +18,11 @@
                     </div>
                 </div>
                 <div class="user-login text-right col-lg-2">
-                    <a href="{{Route('s.register')}}"><i class="fas fa-edit"></i>Register</a>
-                </div>
-                <div class="user-login text-right col-lg-2">
                     <a href="{{Route('s.login')}}"><i class="fas fa-edit"></i>LogIn</a>
                 </div>
+                <!-- <div class="user-login text-right col-lg-2">
+                    <a href=""><i class="fas fa-edit"></i>LogIn</a>
+                </div> -->
             </div>
         </div>
     </div>

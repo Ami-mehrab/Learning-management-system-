@@ -84,7 +84,7 @@ class EnrollController extends Controller
         // dd($myCart);
         return view('frontend.courses.coursecartview', compact('mycart'));
     }
-
+//checkout page
     public function checkEnroll()
     {
 
@@ -92,6 +92,8 @@ class EnrollController extends Controller
 
         return view('frontend.courses.courseplaceEnroll');
     }
+
+    //place order page
     public function placeEnroll(Request $request)
     {
 
@@ -104,6 +106,8 @@ class EnrollController extends Controller
             'student_phone' => $request->phone,
             'student_email' => $request->email,
             'pay_method' => $request->pay,
+            'pay_status'=>$request->pay_status,
+            'status'=>$request->status,
             'total' => $request->total
 
         ]);
@@ -126,9 +130,30 @@ class EnrollController extends Controller
 
             ]);
         }
-
         toastr()->title('Place Enrollment')->success(' Course enrolled successfull!');
         $mycart = Session::forget('cart');
         return redirect()->route('home');
     }
+
+   
+    //showing 
+    //-enrolledlist
+
+    public function enrolledlist(){
+        $enroll=Enroll::with('student','enrolldetails')->paginate(10);
+
+        return view('backend.Enrollment.list',compact('enroll'));
+    }
+
+//enrolledview
+
+    // public function enrolledview($id){
+
+    //     $enrollment=Enroll::find();
+        
+   
+    //     return view('backend.Enrollment.view',compact('enrollment'));
+    // }
+
+
 }

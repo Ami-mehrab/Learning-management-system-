@@ -6,9 +6,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseviewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\enrolledcourselistController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -56,6 +58,13 @@ Route::post('/instructor.store',[InstructorController::class,'store'])->name('i_
 Route::get('/instructor.delete/{id}',[InstructorController::class,'delete'])->name('i_delete');
 //viewing instructor
 Route::get('/InstructorView/{id}',[InstructorController::class,'profile'])->name('i.view');
+
+
+
+//route for Enrolledcourse-list
+
+Route::get('/enrolled/course/list',[EnrollController::class,'enrolledlist'])->name('enrolledlist');
+//viewenrolled
 
 
 });

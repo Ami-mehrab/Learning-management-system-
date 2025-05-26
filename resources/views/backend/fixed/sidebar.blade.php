@@ -72,9 +72,15 @@
                             <span> Instructor </span>
                         </a>
                     </li>
+                    <li class="side-nav-item">
+                        <a href="{{Route('enrolledlist')}}" class="side-nav-link">
+                            <i class="uil-calender"></i>
+                            <span>EnrolledList</span>
+                        </a>
+                    </li>
                 
 
-
+              
 
                     
 

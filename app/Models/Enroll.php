@@ -7,4 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Enroll extends Model
 {
     protected  $guarded =[];
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
+
+    public function enrolldetails(){
+        return $this->hasMany(EnrollDetail::class,'enrolledcourse_id');
+    }
 }
