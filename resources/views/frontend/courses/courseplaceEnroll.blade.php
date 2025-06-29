@@ -53,7 +53,7 @@
       <!-- Course Summary -->
       <div class="mb-4">
         <h3 class="course-title"></h3>
-        <p>Master the fundamentals of HTML, CSS, JavaScript, and Bootstrap to build responsive websites and applications.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         <div class="d-flex justify-content-between align-items-center">
           <span class="price-tag">Total Amount: {{array_sum(array_column(Session::get('cart'),'subtotal'))}} BDT</span>
           <span class="badge bg-success">Enrolled</span>
@@ -69,15 +69,15 @@
           <div class="row g-3">
             <div class="col-md-6">
               <label for="inputName" class="form-label">Name</label>
-              <input type="text" name= "name" class="form-control" id="inputName" value="Enter name" required />
+              <input type="text" name= "name" class="form-control" id="inputName" value="" required />
             </div>
             <div class="col-md-6">
               <label for="" class="form-label">Phone</label>
-              <input type="number" name="phone"class="form-control" id="inputNumber" value="Enter phone" required />
+              <input type="text" name="phone"class="form-control" id="inputNumber" value="" required />
             </div>
             <div class="col-md-6">
               <label for="inputEmail" class="form-label">Email Address</label>
-              <input type="email" name= "email" class="form-control" id="inputEmail" value="john.doe@example.com" required />
+              <input type="email" name= "email" class="form-control" id="inputEmail" value="" required />
             </div>
             <div class="col-md-6">
               <label for="" class="form-label"></label>

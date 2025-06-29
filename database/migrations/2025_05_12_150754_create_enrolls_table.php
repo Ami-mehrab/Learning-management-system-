@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('student_email');
             $table->string('total');
             $table->string('pay_method');
-            $table->string('Pay_Status')->default('un-paid');
-            $table->string('status')->default('pending');
+            $table->string('Pay_Status')->nullable('un-paid');
+            $table->string('status')->nullable('pending');
             $table->timestamps();
         });
     }
